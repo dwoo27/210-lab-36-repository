@@ -16,7 +16,6 @@ int main() {
     IntBinaryTree tree; //create BST
 
     if (fin.good()) { //read values from txt and populate bst
-        cout << "file open";
         for (int i = 0; i < SIZE; i++) {
             getline(fin, value);
             tree.insertNode(value);
@@ -29,6 +28,8 @@ int main() {
 
     //do while for menu
     int choice;
+    string newValue;
+    bool proceed;
 
     do {
         cout << "1. Display records" << endl;
@@ -49,6 +50,7 @@ int main() {
                 cout << endl;
                 cout << "Records in order: " << endl;
                 tree.displayInOrder();
+                break;
 
             //add to record
             case 2:
@@ -94,23 +96,25 @@ int main() {
 
             //modify record
             case 5:
-                string newValue;
-
                 cout << "Enter record to modify: " << endl;
                 getline(cin, value);
 
                 cout << "Enter new record: " << endl;
                 getline(cin, newValue);
 
+                proceed = true;
+
                 if (!tree.searchNode(value)) {
                     cout << "Record to modify not found" << endl;
+                    proceed = false;
                 }
                 if (tree.searchNode(newValue)) {
                     cout << "New record already exists" << endl;
+                    proceed = false;
                 }
-                else {
+                if(proceed){
                     cout << "Record found: " << value << endl;
-                    cout << "Changing record to " << newValue << endl;
+                    cout << "Changing record to: " << newValue << endl;
                     tree.remove(value);
                     tree.insertNode(newValue);
                 }
@@ -119,8 +123,12 @@ int main() {
             case 6:
                 cout << "Exiting program" << endl;
                 break;
+            
+            default:
+                cout << "Invalid choice. Please try again." << endl;
         }
 
     } while (choice != 6);
+   
     return 0;
 }
