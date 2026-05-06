@@ -26,7 +26,10 @@ int main() {
     else {
         cout << "File not found";
     }
+
     //do while for menu
+    int choice;
+
     do {
         cout << "1. Display records" << endl;
         cout << "2. Add record" << endl;
@@ -36,7 +39,7 @@ int main() {
         cout << "6. Quit" << endl;
         cout << "Enter choice: " << endl;
        
-        int choice;
+     
         cin >> choice;
         cin.ignore(1000, 10);
 
@@ -63,17 +66,61 @@ int main() {
 
             //delete record
             case 3:
-           
+                cout << "Enter record to delete: " << endl;
+                getline(cin, value);
+
+                if (tree.searchNode(value)) {
+                    cout << "Record deleted: " << value << endl;
+                    tree.remove(value);
+                }
+                else {
+                    cout << "Record not found: " << value << endl;
+                }
+                break;
+
+
             //search for record
             case 4:
-           
+                cout << "Enter record to search: " << endl;
+                getline(cin, value);
+
+                if (tree.searchNode(value)) {
+                    cout << "Record found" << endl;
+                }
+                else {
+                    cout << "Record not found" << endl;
+                }
+                break;
+
             //modify record
             case 5:
+                string newValue;
 
+                cout << "Enter record to modify: " << endl;
+                getline(cin, value);
+
+                cout << "Enter new record: " << endl;
+                getline(cin, newValue);
+
+                if (!tree.searchNode(value)) {
+                    cout << "Record to modify not found" << endl;
+                }
+                if (tree.searchNode(newValue)) {
+                    cout << "New record already exists" << endl;
+                }
+                else {
+                    cout << "Record found: " << value << endl;
+                    cout << "Changing record to " << newValue << endl;
+                    tree.remove(value);
+                    tree.insertNode(newValue);
+                }
+                break;
             //quit
             case 6:
+                cout << "Exiting program" << endl;
+                break;
         }
 
-    } while ();
+    } while (choice != 6);
     return 0;
 }
