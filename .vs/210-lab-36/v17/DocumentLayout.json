@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{B014F2DE-013F-43F0-B532-81146797C10B}|210-lab-36.vcxproj|C:\\Users\\dylan\\source\\repos\\210-lab-36\\210-lab-36.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B014F2DE-013F-43F0-B532-81146797C10B}|210-lab-36.vcxproj|solutionrelative:210-lab-36.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9DC019B-4D41-6A3A-8968-3BC085F89167}|..\\..\\..\\AppData\\Roaming\\Microsoft\\VisualStudio\\17.0_889f3c7c\\SingleFileISense\\_sfi_94c7284e-e759-4554-adc7-4e4b1d91a07f_.vcxproj|C:\\USERS\\DYLAN\\SOURCE\\REPOS\\210-LAB-36\\INTBINARYTREE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9DC019B-4D41-6A3A-8968-3BC085F89167}|..\\..\\..\\AppData\\Roaming\\Microsoft\\VisualStudio\\17.0_889f3c7c\\SingleFileISense\\_sfi_94c7284e-e759-4554-adc7-4e4b1d91a07f_.vcxproj|solutionrelative:INTBINARYTREE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,9 +28,22 @@
               "RelativeDocumentMoniker": "210-lab-36.cpp",
               "ToolTip": "C:\\Users\\dylan\\source\\repos\\210-lab-36\\210-lab-36.cpp",
               "RelativeToolTip": "210-lab-36.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-06T21:41:05.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IntBinaryTree.h",
+              "DocumentMoniker": "C:\\Users\\dylan\\source\\repos\\210-lab-36\\IntBinaryTree.h",
+              "RelativeDocumentMoniker": "IntBinaryTree.h",
+              "ToolTip": "C:\\Users\\dylan\\source\\repos\\210-lab-36\\IntBinaryTree.h",
+              "RelativeToolTip": "IntBinaryTree.h",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAIgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-06T21:57:06.111Z",
               "EditorCaption": ""
             },
             {
