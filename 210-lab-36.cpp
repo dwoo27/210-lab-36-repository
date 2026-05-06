@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 #include <string>
 #include "IntBinaryTree.h"
 using namespace std;
@@ -37,14 +38,29 @@ int main() {
        
         int choice;
         cin >> choice;
+        cin.ignore(1000, 10);
 
         switch (choice) {
             //display bst
             case 1:
-        
+                cout << endl;
+                cout << "Records in order: " << endl;
+                tree.displayInOrder();
+
             //add to record
             case 2:
-            
+                cout << "Enter record to add: " << endl;
+                getline(cin, value);
+
+                if (tree.searchNode(value)) {
+                    cout << "Record already exists" << endl;
+                }
+                else {
+                    tree.insertNode(value);
+                    cout << "Record added: " << value << endl;
+                }
+                break;
+
             //delete record
             case 3:
            
