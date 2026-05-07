@@ -42,6 +42,12 @@ int main() {
        
      
         cin >> choice;
+        
+        if (cin.fail()) {//prevents program from crashing if cin receives str instead of int for invalid choice
+            cin.clear();
+            choice = 0;
+        }
+        
         cin.ignore(1000, 10);
 
         switch (choice) {
@@ -49,7 +55,8 @@ int main() {
             case 1:
                 cout << endl;
                 cout << "Records in order: " << endl;
-                tree.displayInOrder();
+                tree.displayInOrder(); //displays sorted bst
+                cout << endl;
                 break;
 
             //add to record
@@ -57,12 +64,12 @@ int main() {
                 cout << "Enter record to add: " << endl;
                 getline(cin, value);
 
-                if (tree.searchNode(value)) {
-                    cout << "Record already exists" << endl;
+                if (tree.searchNode(value)) { //searches if new record to be added already exists
+                    cout << "Record already exists" << endl << endl;
                 }
                 else {
-                    tree.insertNode(value);
-                    cout << "Record added: " << value << endl;
+                    tree.insertNode(value); //otherwise add new record
+                    cout << "Record added: " << value << endl << endl;                
                 }
                 break;
 
@@ -71,12 +78,12 @@ int main() {
                 cout << "Enter record to delete: " << endl;
                 getline(cin, value);
 
-                if (tree.searchNode(value)) {
-                    cout << "Record deleted: " << value << endl;
+                if (tree.searchNode(value)) { //checks if record exists then deletes 
+                    cout << "Record deleted: " << value << endl << endl;
                     tree.remove(value);
                 }
                 else {
-                    cout << "Record not found: " << value << endl;
+                    cout << "Record not found: " << value << endl << endl;
                 }
                 break;
 
@@ -86,17 +93,17 @@ int main() {
                 cout << "Enter record to search: " << endl;
                 getline(cin, value);
 
-                if (tree.searchNode(value)) {
-                    cout << "Record found" << endl;
+                if (tree.searchNode(value)) { //searches for record
+                    cout << "Record found" << endl << endl;
                 }
                 else {
-                    cout << "Record not found" << endl;
+                    cout << "Record not found" << endl << endl;
                 }
                 break;
 
             //modify record
             case 5:
-                cout << "Enter record to modify: " << endl;
+                cout << "Enter record to modify: " << endl; 
                 getline(cin, value);
 
                 cout << "Enter new record: " << endl;
@@ -104,28 +111,30 @@ int main() {
 
                 proceed = true;
 
-                if (!tree.searchNode(value)) {
+                if (!tree.searchNode(value)) { //checks if record to change exists
                     cout << "Record to modify not found" << endl;
                     proceed = false;
                 }
-                if (tree.searchNode(newValue)) {
+                if (tree.searchNode(newValue)) { //checks if new record already exists
                     cout << "New record already exists" << endl;
                     proceed = false;
                 }
-                if(proceed){
-                    cout << "Record found: " << value << endl;
-                    cout << "Changing record to: " << newValue << endl;
+                if(proceed){ //removes old and adds new records
+                    cout << endl << "Record found: " << value << endl;
+                    cout << "Changing record to: " << newValue << endl << endl;
                     tree.remove(value);
                     tree.insertNode(newValue);
                 }
                 break;
+           
             //quit
             case 6:
                 cout << "Exiting program" << endl;
                 break;
             
-            default:
-                cout << "Invalid choice. Please try again." << endl;
+            default: //default for invalid choice
+                cout << "Invalid choice. Please try again." << endl << endl;
+                break;
         }
 
     } while (choice != 6);
